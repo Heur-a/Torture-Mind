@@ -5,16 +5,16 @@ using UnityEngine.UI;
 public class ControlBarraLocura : MonoBehaviour
 {
     [SerializeField] private Image barraLocura;
-    [SerializeField] private float maxLocura = 1;
-    [SerializeField] private float recuperacionLocura = 0.05;
-    [SerializeField] private float hitLocura = 0.15;
+    [SerializeField] private float maxLocura = 1f;
+    [SerializeField] private float recuperacionLocura = 0.015f;
+    [SerializeField] private float hitLocura = 0.025f;
 
     private float value = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        content.fillAmount = value;
+        barraLocura.fillAmount = value;
     }
 
     // Update is called once per frame
@@ -32,6 +32,6 @@ public class ControlBarraLocura : MonoBehaviour
         value = Mathf.Clamp(value, 0, maxLocura);
 
         // Actualización de la barra de locura
-        content.fillAmount = value;
+        barraLocura.fillAmount = value;
     }
 }
